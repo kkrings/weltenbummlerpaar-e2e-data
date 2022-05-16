@@ -6,6 +6,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
+    "test": "jest",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\""
   },
@@ -14,19 +15,35 @@
   "license": "GPL-3.0",
   "bugs": "https://github.com/kkrings/weltenbummlerpaar-e2e-data/issues",
   "homepage": "https://github.com/kkrings/weltenbummlerpaar-e2e-data#readme",
+  "dependencies": {
+    "mongodb": "^4.6.0"
+  },
   "devDependencies": {
+    "@types/jest": "^27.5.1",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.0",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.2",
     "typescript": "^4.6.4"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "ts"],
+    "rootDir": "src",
+    "testEnvironment": "node",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    }
   },
   "eslintConfig": {
     "env": {
       "node": true,
+      "jest": true,
       "es2021": true
     },
     "extends": [
@@ -36,7 +53,7 @@
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "tsconfig.json",
-      "ecmaVersion": "latest",
+      "ecmaVersion": 2021,
       "sourceType": "module"
     },
     "plugins": [
@@ -47,8 +64,5 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
-  },
-  "dependencies": {
-    "mongodb": "^4.6.0"
   }
 }
