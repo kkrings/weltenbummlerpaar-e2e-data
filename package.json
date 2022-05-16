@@ -32,7 +32,6 @@
     "extends": [
       "plugin:@typescript-eslint/recommended",
       "plugin:prettier/recommended"
-
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -43,11 +42,13 @@
     "plugins": [
       "@typescript-eslint"
     ],
-    "rules": {
-    }
+    "rules": {}
   },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "dependencies": {
+    "mongodb": "^4.6.0"
   }
 }
