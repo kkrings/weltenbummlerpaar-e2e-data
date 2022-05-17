@@ -9,7 +9,7 @@ export async function insertImages(database: Db): Promise<void> {
   await collection.insertMany(documents);
 }
 
-const asDocument = (image: ImageDto): Document => ({
+export const asDocument = (image: ImageDto): Document => ({
   _id: asMongoId(image.id),
   description: image.description,
   diaryEntryId: asMongoId(image.diaryEntryId),
