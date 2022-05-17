@@ -4,12 +4,12 @@
   "description": "Node package for filling data for E2E testing into MongoDB",
   "main": "dist/index.js",
   "scripts": {
+    "prepare": "husky install",
     "prebuild": "rimraf dist",
     "build": "tsc --project tsconfig.build.json",
     "test": "jest",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "prepare": "husky install"
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "repository": "github.com:kkrings/weltenbummlerpaar-e2e-data",
   "author": "Kai Krings",
