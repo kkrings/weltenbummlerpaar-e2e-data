@@ -10,7 +10,7 @@ export async function insertDiaryEntries(database: Db): Promise<void> {
   await collection.insertMany(documents);
 }
 
-const asDocument = (diaryEntry: DiaryEntryDto): Document =>
+export const asDocument = (diaryEntry: DiaryEntryDto): Document =>
   removeOptional(_asDocument(diaryEntry));
 
 const _asDocument = (diaryEntry: DiaryEntryDto): Document => ({
