@@ -1,8 +1,10 @@
 {
   "name": "@kkrings/weltenbummlerpaar-e2e-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node package for filling data for E2E testing into MongoDB",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "prepare": "husky install",
