@@ -15,7 +15,10 @@ export async function setupDB(url: string): Promise<TeardownDB> {
 }
 
 async function teardownDB(connection: MongoClient): Promise<void> {
-  await connection.db().dropDatabase();
+  const database = connection.db();
+  await database.dropCollection('diaryentries');
+  await database.dropCollection('searchtags');
+  await database.dropCollection('images');
   await connection.close();
 }
 
