@@ -1,4 +1,5 @@
 import { MongoClient } from 'mongodb';
+import { deleteDocuments } from './delete-documents';
 import { insertDiaryEntries } from './insert-diary-entries';
 import { insertImages } from './insert-images';
 import { insertSearchTags } from './insert-search-tags';
@@ -15,10 +16,7 @@ export async function setupDB(url: string): Promise<TeardownDB> {
 }
 
 async function teardownDB(connection: MongoClient): Promise<void> {
-  const database = connection.db();
-  await database.dropCollection('diaryentries');
-  await database.dropCollection('searchtags');
-  await database.dropCollection('images');
+  await deleteDocuments(connection.db());
   await connection.close();
 }
 
