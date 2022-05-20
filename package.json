@@ -31,7 +31,6 @@
     "@typescript-eslint/parser": "^5.23.0",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "husky": "^8.0.1",
     "jest": "^28.1.0",
     "lint-staged": "^12.4.1",
@@ -60,7 +59,7 @@
     },
     "extends": [
       "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended"
+      "pretter"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
