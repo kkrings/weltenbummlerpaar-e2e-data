@@ -59,7 +59,7 @@
     },
     "extends": [
       "plugin:@typescript-eslint/recommended",
-      "pretter"
+      "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
