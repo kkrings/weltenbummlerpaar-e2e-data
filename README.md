@@ -49,9 +49,9 @@ describe('some E2E test', () => {
 });
 ```
 
-It the returns a function of type `TeardownDB`. If this function is called, the
-database is dropped, and the connection to it is closed. This should usually
-happen e.g. inside of a `afterEach` hook.
+It the returns a function of type `TeardownDB`. If this function is called, all
+created documents are deleted, and the connection to it is closed. This should
+usually happen e.g. inside of a `afterEach` hook.
 
 The diary entries and images that are filled into the database can be obtained
 from the function `getDiaryEntries` and `getImages`. They are returned as they
