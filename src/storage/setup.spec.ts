@@ -39,7 +39,7 @@ describe('setupStorage', () => {
 
   it('images should have been copied to storage', () => {
     expect(storageAfterSetup).toEqual(
-      getImages().map((image) => `${image.id}.jpeg`),
+      getImages().map((image) => `${image.id}.jpg`),
     );
   });
 

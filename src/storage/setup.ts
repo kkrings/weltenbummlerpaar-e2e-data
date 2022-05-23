@@ -8,7 +8,7 @@ export async function setupStorage(storage: string): Promise<TeardownStorage> {
 
   await Promise.all(
     getImages().map(
-      async (image) => await copyImage.toStorage(`${image.id}.jpeg`),
+      async (image) => await copyImage.toStorage(`${image.id}.jpg`),
     ),
   );
 
