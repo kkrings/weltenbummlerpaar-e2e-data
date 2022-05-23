@@ -2,7 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 
 export class CopyImage {
-  private readonly source = path.join(__dirname, '../assets/image.jpeg');
+  private readonly source = path.join(__dirname, '../../assets/image.jpeg');
 
   constructor(private readonly storage: string) {}
 
