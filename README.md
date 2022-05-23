@@ -13,27 +13,33 @@ E2E tests of both the [Angular]-based [frontend] and the [Nest]-based [backend].
 
 # Usage
 
-The package provides the `setupDB` function, which takes care of filling the
-data into the database. It expects a connection string, and it should be called
-e.g. inside of a `beforeEach` hook:
+The package provides the functions `setupDB` and `setupStorage`, respectively.
+The former takes care of filling the data into the database. It expects a
+connection string. The latter copies the corresponding image files into the
+given directory for image uploads. Both functions should be called e.g. inside
+of a `beforeEach` hook:
 
 ```typescript
 import {
   getDiaryEtries,
   getImages,
   setupDB,
+  setupStorage,
   DiaryEntryDto,
   ImageDto,
   TeardownDB,
+  TeardownStorage,
 } from '@kkrings/weltenbummlerpaar-e2-data';
 
 describe('some E2E test', () => {
   let teardownDB: TeardownDB;
+  let teardownStorage: TeardownStorage;
   let diaryEntries: DiaryEntryDto[];
   let images: ImageDto[];
 
   beforeEach(async () => {
     teardownDB = await setupDB('some MongoDB URL');
+    teardownStorage = await setupStorage('path to image upload directory');
   });
 
   beforeEach(() => {
@@ -45,13 +51,15 @@ describe('some E2E test', () => {
 
   afterEach(async () => {
     await teardownDB();
+    await teardownStorage();
   });
 });
 ```
 
-It the returns a function of type `TeardownDB`. If this function is called, all
-created documents are deleted, and the connection to it is closed. This should
-usually happen e.g. inside of a `afterEach` hook.
+They return functions of type `TeardownDB` and `TeardownStorage`, respectively.
+If these functions are called, all created documents are deleted, the connection
+to the database is closed, and the image upload directory is cleared. This
+should usually happen e.g. inside of a `afterEach` hook.
 
 The diary entries and images that are filled into the database can be obtained
 from the function `getDiaryEntries` and `getImages`. They are returned as they
