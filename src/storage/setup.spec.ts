@@ -2,11 +2,12 @@ import * as fs from 'fs/promises';
 import * as os from 'os';
 import * as path from 'path';
 import { getImages } from '../payloads/get-images';
-import { setupStorage, TeardownStorage } from './setup';
+import { Teardown } from '../types/teardown';
+import { setupStorage } from './setup';
 
 describe('setupStorage', () => {
   let storage: string;
-  let teardownStorage: TeardownStorage;
+  let teardownStorage: Teardown;
   let storageAfterSetup: string[];
   let storageAfterTeardown: string[];
 

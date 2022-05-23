@@ -1,9 +1,10 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { getImages } from '../payloads/get-images';
+import { Teardown } from '../types/teardown';
 import { CopyImage } from './copy';
 
-export async function setupStorage(storage: string): Promise<TeardownStorage> {
+export async function setupStorage(storage: string): Promise<Teardown> {
   const copyImage = new CopyImage(storage);
 
   await Promise.all(
@@ -22,5 +23,3 @@ async function teardownStorage(storage: string): Promise<void> {
     images.map(async (image) => await fs.rm(path.join(storage, image))),
   );
 }
-
-export type TeardownStorage = () => ReturnType<typeof teardownStorage>;
