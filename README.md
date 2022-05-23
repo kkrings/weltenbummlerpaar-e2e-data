@@ -60,3 +60,6 @@ hook.
 The diary entries and images that are filled into the database can be obtained
 from the function `getDiaryEntries` and `getImages`. They are returned as they
 would have been sent from the backend server.
+
+For testing image uploads, the `getImageFile` function is provided, which
+returns the path to a JPEG file.

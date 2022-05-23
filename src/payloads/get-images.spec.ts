@@ -31,8 +31,9 @@ describe('get-images', () => {
 
     it("should be equal to diary entries' images", () => {
       expect(images).toEqual([
-        diaryEntries[1].images[0],
-        diaryEntries[2].images[0],
+        ...diaryEntries[0].images,
+        ...diaryEntries[1].images,
+        ...diaryEntries[2].images,
       ]);
     });
   });

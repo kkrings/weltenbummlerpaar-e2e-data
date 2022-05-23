@@ -55,6 +55,13 @@ export const _getDiaryEntries = (): DiaryEntryDto[] => [
         createdAt: new Date(2020, 2, 16, 1).toISOString(),
         updatedAt: new Date(2020, 2, 16, 1).toISOString(),
       },
+      {
+        id: '628bdee92fb891b1c8129fba',
+        description: 'yet another description',
+        diaryEntryId: '627fc51675cebfd2115a2d14',
+        createdAt: new Date(2020, 2, 16, 1).toISOString(),
+        updatedAt: new Date(2020, 2, 16, 1).toISOString(),
+      },
     ],
     createdAt: new Date(2020, 2, 16).toISOString(),
     updatedAt: new Date(2020, 2, 16, 1).toISOString(),

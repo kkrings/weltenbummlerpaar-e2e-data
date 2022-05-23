@@ -56,4 +56,18 @@ describe('get-diary-entries', () => {
       expect(diaryEntry.previewImage).toEqual(image);
     });
   });
+
+  describe('#diaryEntries[2].images[1]', () => {
+    let diaryEntry: DiaryEntryDto;
+    let image: ImageDto;
+
+    beforeEach(() => {
+      diaryEntry = diaryEntries[2];
+      image = diaryEntry.images[1];
+    });
+
+    it("#diaryEntryId should be equal to diary entry's ID", () => {
+      expect(image.diaryEntryId).toEqual(diaryEntry.id);
+    });
+  });
 });
