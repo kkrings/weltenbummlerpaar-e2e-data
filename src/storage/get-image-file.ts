@@ -1,4 +1,6 @@
 import * as path from 'path';
 
-export const getImageFile = (): string =>
-  path.join(__dirname, '../../assets/image.jpg');
+type Extension = 'jpg' | 'png';
+
+export const getImageFile = (extension: Extension = 'jpg'): string =>
+  path.join(__dirname, `../../assets/image.${extension}`);
