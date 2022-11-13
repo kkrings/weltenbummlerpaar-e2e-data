@@ -1,23 +1,12 @@
 {
 	"name": "Weltenbummlerpaar E2E Data",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": { 
-			"VARIANT": "16-bullseye"
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode"
+			]
 		}
-	},
-	"settings": {
-		"editor.renderWhitespace": "all",
-		"editor.rulers": [80],
-		"[typescript]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
-		}
-
-	},
-	"extensions": [
-		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode"
-	],
-	"postCreateCommand": "npm install",
-	"remoteUser": "node"
+	}
 }
