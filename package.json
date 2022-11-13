@@ -1,6 +1,6 @@
 {
   "name": "@kkrings/weltenbummlerpaar-e2e-data",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Node package for filling data for E2E testing into MongoDB",
   "files": [
     "assets",
